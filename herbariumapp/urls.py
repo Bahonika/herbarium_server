@@ -20,3 +20,7 @@ urlpatterns = [
                   path('admin/', admin.site.urls),
                   path('', include('herbarium.urls'))
               ]
+
+urlpatterns = [
+    path('herbarium/baginskiy/', include(urlpatterns))
+]
