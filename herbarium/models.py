@@ -22,4 +22,4 @@ class Plant(models.Model):
     date = models.DateField()
     collector = models.CharField(max_length=150)
     determinate = models.CharField(max_length=150)
-    photo = models.ForeignKey(PlantImage, related_name="img", on_delete=models.RESTRICT)
+    photo = models.ForeignKey(PlantImage,  related_name="img", on_delete=models.RESTRICT, blank=True, null=True)

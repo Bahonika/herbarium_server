@@ -92,12 +92,19 @@ DATABASES = {
         'PASSWORD': '123456',
         'HOST': 'herbarium',
         'PORT': '3306',
-#	'OPTIONS': {
-#		'sql_mode': 'traditional',
-#	}
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'Herbarium',
+#         'USER': 'root',
+#         'PASSWORD': 'Admin',
+#         'HOST': 'localhost',
+#         'PORT': '3307',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
