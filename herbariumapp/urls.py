@@ -17,12 +17,27 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from .utils import serve
+import os
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
-                  path('', include('herbarium.urls'))
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+                  path('api/', include('herbarium.urls'))
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+FLUTTER_WEB_APP = os.path.join(BASE_DIR, 'web')
+
+
+def flutter_redirect(request, resource):
+    return serve(request, resource, FLUTTER_WEB_APP)
+
+
+urlpatterns += [
+    path('', lambda r: flutter_redirect(r, 'index.html')),
+    path('<path:resource>', flutter_redirect),
+]
 
 urlpatterns = [
-    path('herbarium/baginskiy/', include(urlpatterns))
+    path('herbarium/', include(urlpatterns))
 ]

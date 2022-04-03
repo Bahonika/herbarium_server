@@ -4,8 +4,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 router = routers.DefaultRouter()
-router.register('api/plant', PlantViewSet, 'plant')
-router.register('api/plantimage', PlantImageViewSet, 'plantimage')
+router.register('plant', PlantViewSet, 'plant')
+router.register('plantimage', PlantImageViewSet, 'plantimage')
 
 urlpatterns = router.urls
 
