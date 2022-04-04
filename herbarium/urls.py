@@ -1,11 +1,13 @@
 from rest_framework import routers
-from .api import PlantViewSet, PlantImageViewSet
+# from .api import PlantViewSet, PlantImageViewSet
 from django.conf import settings
 from django.conf.urls.static import static
 
+from herbarium.api import PlantViewSet
+
 router = routers.DefaultRouter()
 router.register('plant', PlantViewSet, 'plant')
-router.register('plantimage', PlantImageViewSet, 'plantimage')
+# router.register('plant_image', PlantImageViewSet, 'plant_image')
 
 urlpatterns = router.urls
 
