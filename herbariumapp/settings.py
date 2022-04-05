@@ -90,12 +90,12 @@ DATABASES = {
         'NAME': 'Herbarium',
         'USER': 'django',
         'PASSWORD': '123456',
-        'HOST': 'herbarium',
+        'HOST': '172.21.210.8',
         'PORT': '3306',
     }
 }
 
-# DATABASES = {
+# DATABASES =
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
 #         'NAME': 'Herbarium',
