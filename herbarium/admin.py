@@ -1,8 +1,9 @@
 from django.contrib import admin
-from herbarium.models import Plant, PlantImage
+# from herbarium.models import Plant, PlantImage
+from herbarium.models import Plant
 
 admin.site.register(Plant)
-admin.site.register(PlantImage)
+# admin.site.register(PlantImage)
 
 # class PlantAdmin(admin.ModelAdmin):
 #     list_display = '__all__'
