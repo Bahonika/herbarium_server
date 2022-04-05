@@ -3,7 +3,6 @@ from .models import PlantImage, Plant
 from .serializers import PlantSerializer, PlantImageSerializer
 
 
-
 class PlantViewSet(viewsets.ModelViewSet):
     queryset = Plant.objects.all()
     permission_classes = [
@@ -18,4 +17,3 @@ class PlantImageViewSet(viewsets.ModelViewSet):
         permissions.AllowAny
     ]
     serializer_class = PlantImageSerializer
-
