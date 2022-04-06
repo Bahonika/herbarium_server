@@ -1,6 +1,6 @@
 {
-    "name": "polar_sun",
-    "short_name": "polar_sun",
+    "name": "plant_book",
+    "short_name": "plant_book",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
