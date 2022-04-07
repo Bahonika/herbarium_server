@@ -158,7 +158,7 @@ USE_TZ = True
 
 STATIC_URL = '/herbarium/api/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'herabrium/api/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'herbarium/api/media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
