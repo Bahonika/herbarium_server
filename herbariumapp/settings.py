@@ -66,8 +66,10 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     'https://projects.masu.edu.ru',
 ]
+CSRF_TRUSTED_ORIGINS = ['https://projects.masu.edu.ru']
 
-CSRF_COOKIE_HTTPONLY = True
+
+CSRF_COOKIE_HTTPONLY = False
 SESSION_COOKIE_HTTPONLY = True
 
 # CORS_ALLOWED_ORIGIN_REGEXES = [
