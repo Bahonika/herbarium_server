@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from django.middleware.csrf import get_token
 from django.contrib.auth import authenticate, login, logout
 from .models import Plant
+from rest_framework.authentication import SessionAuthentication
 
 from .serializers import UserRegSerializer, PlantSerializer, UserSerializer
 
@@ -14,8 +15,15 @@ def get_crsf(request):
     return JsonResponse({'X-CSRFToken': get_token(request)})
 
 
+class CsrfExemptSessionAuthentication(SessionAuthentication):
+
+    def enforce_csrf(self, request):
+        return  # To not perform the csrf check previously happening
+
+
 class LoginView(APIView):
     permission_classes = [permissions.AllowAny]
+    authentication_classes = (CsrfExemptSessionAuthentication,)
 
     def post(self, request, format=None):
         username = request.data.get('username')
