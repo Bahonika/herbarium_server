@@ -64,11 +64,3 @@ class UpdatePlantView(generics.UpdateAPIView):
 
     def get_queryset(self):
         return Plant.objects.all()
-
-
-# class CreatePlantView(generics.CreateAPIView):
-#     serializer_class = PlantSerializer
-#     permission_classes = [permissions.DjangoObjectPermissions]
-#
-#     def get_queryset(self):
-#         return Plant.objects.all()
