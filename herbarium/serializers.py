@@ -47,15 +47,11 @@ class UserRegSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    fio = serializers.SerializerMethodField('get_fio')
     group = serializers.SerializerMethodField('get_group')
-
-    def get_fio(self, obj):
-        return obj.first_name + ' ' + obj.last_name
 
     def get_group(self, obj):
         return str(obj.groups.all().first())
 
     class Meta:
         model = User
-        fields = ["id", "username", "fio", "group"]
+        fields = ["id", "username", "first_name", "last_name", "group"]

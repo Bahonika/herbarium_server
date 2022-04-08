@@ -28,7 +28,7 @@ class LoginView(APIView):
             return Response({'detail': 'Invalid credentials.'}, status=400)
 
         login(request, user)
-        return Response({'detail': 'Successfully logged in.'})
+        return Response(UserSerializer(request.user).data)
 
 
 class LogoutView(APIView):
