@@ -7,6 +7,11 @@ from .models import Plant, Subscriber
 
 
 class PlantSerializer(serializers.ModelSerializer):
+    photo_url = serializers.SerializerMethodField()
+
+    def get_photo_url(self, obj):
+        return obj.photo.url
+
     class Meta:
         model = Plant
         fields = '__all__'

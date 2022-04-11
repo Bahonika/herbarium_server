@@ -157,10 +157,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = '/herbarium/api/static/'
-MEDIA_URL = '/media/'
-MEDIA_DIR = os.path.join(BASE_DIR, 'herbarium/api/media')
-MEDIA_ROOT = MEDIA_DIR
+# STATIC_URL = '/herbarium/api/static/'
+# MEDIA_URL = '/media/'
+# MEDIA_DIR = os.path.join(BASE_DIR, 'herbarium/api/media')
+# MEDIA_ROOT = MEDIA_DIR
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATIC_URL = 'herbarium/api/static/'
+MEDIA_URL = 'media/'
+MEDIA_ROOT = 'herbarium/api/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
