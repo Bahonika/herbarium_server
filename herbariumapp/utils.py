@@ -42,8 +42,7 @@ def serve(request, path, document_root=None, show_indexes=False):
     response.headers["Last-Modified"] = http_date(statobj.st_mtime)
     if encoding:
         response.headers["Content-Encoding"] = encoding
-    print(response.headers, path)
-    if (path.endswith("js")):
+    if path.endswith("js"):
         response.headers["Content-Type"] = "application/javascript"
     return response
 
