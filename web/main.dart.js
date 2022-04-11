@@ -62668,7 +62668,7 @@ A.Ry.prototype={
 rI(a,b){return this.a41(a,b)},
 a41(a,b){var s=0,r=A.T(t._J),q,p,o,n,m,l,k
 var $async$rI=A.U(function(c,d){if(c===1)return A.Q(d,r)
-while(true)switch(s){case 0:n=A.axe("http","projects.masu.edu.ru","/herbarium/api/login",null)
+while(true)switch(s){case 0:n=A.axe("https","projects.masu.edu.ru","/herbarium/api/login",null)
 m=t.N
 s=3
 return A.O(A.aAq(n,A.az(["username",a,"password",b],m,m)),$async$rI)
