@@ -104,27 +104,27 @@ WSGI_APPLICATION = 'herbariumapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Herbarium',
-        'USER': 'django',
-        'PASSWORD': '123456',
-        'HOST': '172.21.210.8',
-        'PORT': '3306',
-    }
-}
-
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
 #         'NAME': 'Herbarium',
-#         'USER': 'root',
-#         'PASSWORD': 'Admin',
-#         'HOST': 'localhost',
-#         'PORT': '3307',
+#         'USER': 'django',
+#         'PASSWORD': '123456',
+#         'HOST': '172.21.210.8',
+#         'PORT': '3306',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Herbarium',
+        'USER': 'root',
+        'PASSWORD': 'Admin',
+        'HOST': 'localhost',
+        'PORT': '3307',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -149,11 +149,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
 LANGUAGE_CODE = 'ru-ru'
-
 TIME_ZONE = 'Europe/Moscow'
-
 USE_I18N = True
-
 USE_TZ = True
 
 
@@ -162,7 +159,8 @@ USE_TZ = True
 
 STATIC_URL = '/herbarium/api/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'herbarium/api/media')
+MEDIA_DIR = os.path.join(BASE_DIR, 'herbarium/api/media')
+MEDIA_ROOT = MEDIA_DIR
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
