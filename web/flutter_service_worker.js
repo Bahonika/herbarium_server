@@ -3,7 +3,7 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "9a608b95336151dc9b229cb9a22ce017",
+  "assets/AssetManifest.json": "20290f4d009aad6eab52cf24adf4a54d",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/fonts/MaterialIcons-Regular.otf": "7e7a6cccddf6d7b20012a548461d5d81",
 "assets/lib/assets/100.jpg": "881e7441e8adcc8ab510785bf0bc5c82",
@@ -25,12 +25,11 @@ const RESOURCES = {
 "assets/lib/assets/Baginskii.jpg": "3410bb32d776aa0832f662a157b00612",
 "assets/lib/assets/flora.png": "58824182f69af5bef5d306e8187727b7",
 "assets/lib/assets/herbarium.png": "1415b40cde9210ff56723323ce061ab8",
-"assets/lib/assets/home_screen.png": "e2eb83d360de8a435e304d795aa3b3f1",
 "assets/lib/assets/logo.png": "28c8e5e3e2cba45f2ad23b4ef61ed995",
 "assets/lib/assets/Markova.jpg": "7b8f91706cc8cc7ca73937d207e2731d",
 "assets/lib/assets/masu.png": "6a647f19cc863bc4ecd077249b70d33a",
 "assets/lib/assets/Moiseeva.jpg": "3ceaaa4f30a7739a7a4344c88cadd4b4",
-"assets/lib/assets/myJson.json": "df07a0baf2a42a735bd088617c53fdce",
+"assets/lib/assets/myJson.json": "2dea650fca01cbf25dfb6fef47d60c87",
 "assets/lib/assets/null.png": "494f963dc73be3d20fc01e4a7f765a2a",
 "assets/lib/assets/Projerin.jpg": "da861401a8d5b0700dce4315e3fa234c",
 "assets/lib/assets/sady.png": "1539797a7e1b0002e6eef5be6dfd6731",
@@ -38,7 +37,7 @@ const RESOURCES = {
 "assets/lib/assets/splash.png": "9b47711c61f0a66b353c852a5002a37d",
 "assets/lib/assets/sprouts.png": "9a399497da8d5b21f32631dd85c524e3",
 "assets/lib/assets/Surovets.jpg": "b7bc92c4bfdea9244d74026d1f15a904",
-"assets/NOTICES": "7a1b8054b5f3c561205f7e23bea56d79",
+"assets/NOTICES": "97ded41aafdfa31bffcd0500a5c2df4d",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "canvaskit/canvaskit.js": "c2b4e5f3d7a3d82aed024e7249a78487",
 "canvaskit/canvaskit.wasm": "4b83d89d9fecbea8ca46f2f760c5a9ba",
@@ -49,10 +48,10 @@ const RESOURCES = {
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "f8a357978579c81c7f3e792c2a38e109",
-"/": "f8a357978579c81c7f3e792c2a38e109",
-"main.dart.js": "3b6ef7c44b395a8dfd6680e57d06d05c",
-"manifest.json": "9ab33103847aa995ddf4697740b3797a",
+"index.html": "503fc82fdb199f845a17d5b04ddbb30e",
+"/": "503fc82fdb199f845a17d5b04ddbb30e",
+"main.dart.js": "62ca938db29cece8ba83a1821d951478",
+"manifest.json": "8f0f94d15e5ef5295c842acaf6f58303",
 "version.json": "5872fee2b6b97e8443ca1ebef745d9c8"
 };
 
