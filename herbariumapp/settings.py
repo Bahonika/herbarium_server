@@ -54,6 +54,7 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -61,7 +62,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
@@ -74,11 +74,13 @@ CSRF_TRUSTED_ORIGINS = ['https://projects.masu.edu.ru']
 
 CSRF_COOKIE_HTTPONLY = True
 SESSION_COOKIE_HTTPONLY = True
-CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOWED_ORIGIN_REGEXES = [
     'https://projects.masu.edu.ru',
 ]
+CORS_ORIGIN_ALLOW_ALL = True
+
+
 
 ROOT_URLCONF = 'herbariumapp.urls'
 
@@ -104,27 +106,27 @@ WSGI_APPLICATION = 'herbariumapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Herbarium',
-        'USER': 'django',
-        'PASSWORD': '123456',
-        'HOST': '172.21.210.8',
-        'PORT': '3306',
-    }
-}
-
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
 #         'NAME': 'Herbarium',
-#         'USER': 'root',
-#         'PASSWORD': 'Admin',
-#         'HOST': 'localhost',
-#         'PORT': '3307',
+#         'USER': 'django',
+#         'PASSWORD': '123456',
+#         'HOST': '172.21.210.8',
+#         'PORT': '3306',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Herbarium',
+        'USER': 'root',
+        'PASSWORD': 'Admin',
+        'HOST': 'localhost',
+        'PORT': '3307',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
