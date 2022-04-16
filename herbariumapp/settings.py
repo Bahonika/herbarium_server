@@ -49,16 +49,17 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ],
 }
 
 MIDDLEWARE = [
+    'django.middleware.csrf.CsrfViewMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -73,14 +74,11 @@ CORS_ALLOWED_ORIGINS = [
 CSRF_TRUSTED_ORIGINS = ['https://projects.masu.edu.ru']
 
 CSRF_COOKIE_HTTPONLY = True
-SESSION_COOKIE_HTTPONLY = True
 
 CORS_ALLOWED_ORIGIN_REGEXES = [
     'https://projects.masu.edu.ru',
 ]
 CORS_ORIGIN_ALLOW_ALL = True
-
-
 
 ROOT_URLCONF = 'herbariumapp.urls'
 
