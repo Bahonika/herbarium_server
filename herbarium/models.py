@@ -29,8 +29,8 @@ class Plant(models.Model):
             photo = Image.open(filepath)
 
             photo_s = photo.resize(
-                (round(width / max_size * 300),  # Сохраняем пропорции
-                 round(height / max_size * 300)),
+                (round(width / max_size * 350),  # Сохраняем пропорции
+                 round(height / max_size * 350)),
             )
             # И не забыть сохраниться
             new_filepath = filepath[0: len(filepath)-4] + "s.jpg"
