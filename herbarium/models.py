@@ -20,7 +20,6 @@ class Plant(models.Model):
         # Сначала - обычное сохранение
         super(Plant, self).save(*args, **kwargs)
 
-        # Проверяем, указан ли логотип
         if self.photo:
             filepath = self.photo.path
             width = self.photo.width
@@ -28,10 +27,10 @@ class Plant(models.Model):
             max_size = max(width, height)
 
             photo = Image.open(filepath)
-            # resize - безопасная функция, она создаёт новый объект, а не
+
             photo_s = photo.resize(
-                (round(width / max_size * 250),  # Сохраняем пропорции
-                 round(height / max_size * 250)),
+                (round(width / max_size * 300),  # Сохраняем пропорции
+                 round(height / max_size * 300)),
             )
             # И не забыть сохраниться
             new_filepath = filepath[0: len(filepath)-4] + "s.jpg"
