@@ -1,7 +1,13 @@
+from django.conf import settings
 from django.db import models
-from django.contrib.auth.models import User
 from PIL import Image
-from os import path
+
+
+class Comment(models.Model):
+    text = models.CharField(max_length=400, null=None, default=None)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    plant = models.ForeignKey("Plant", on_delete=models.CASCADE)
+
 
 class Plant(models.Model):
     serial_number = models.IntegerField(null=None, default=None)
@@ -33,11 +39,6 @@ class Plant(models.Model):
                  round(height / max_size * 350)),
             )
             # И не забыть сохраниться
-            new_filepath = filepath[0: len(filepath)-4] + "s.jpg"
+            new_filepath = filepath[0: len(filepath) - 4] + "s.jpg"
             print(new_filepath)
             photo_s.save(new_filepath)
-
-
-class Subscriber(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    session = models.TextField(max_length=40)

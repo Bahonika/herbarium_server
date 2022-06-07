@@ -3,7 +3,7 @@ from django.contrib.auth.models import Group
 from rest_framework.validators import UniqueValidator
 from rest_framework import serializers
 from django.contrib.auth.password_validation import validate_password
-from .models import Plant, Subscriber
+from .models import Plant, Comment
 
 
 class PlantSerializer(serializers.ModelSerializer):
@@ -14,6 +14,12 @@ class PlantSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Plant
+        fields = '__all__'
+
+
+class CommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
         fields = '__all__'
 
 
@@ -61,13 +67,12 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ["id", "username", "first_name", "last_name", "group"]
 
-
-class SubscriberSerializer(serializers.ModelSerializer):
-    group = serializers.SerializerMethodField('get_group')
-
-    def get_group(self, obj):
-        return str(obj.groups.all().first())
-
-    class Meta:
-        model = Subscriber
-        fields = '__all__'
+# class SubscriberSerializer(serializers.ModelSerializer):
+#     group = serializers.SerializerMethodField('get_group')
+#
+#     def get_group(self, obj):
+#         return str(obj.groups.all().first())
+#
+#     class Meta:
+#         model = Subscriber
+#         fields = '__all__'

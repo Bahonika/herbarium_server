@@ -4,8 +4,8 @@ from rest_framework.response import Response
 from rest_framework import permissions
 from rest_framework import generics
 
-from .models import Plant
-from .serializers import UserRegSerializer, PlantSerializer
+from .models import Plant, Comment
+from .serializers import UserRegSerializer, PlantSerializer, CommentSerializer
 
 
 class CustomAuthToken(ObtainAuthToken):
@@ -32,6 +32,13 @@ class CustomAuthToken(ObtainAuthToken):
 class RegisterView(generics.CreateAPIView):
     permission_classes = [permissions.AllowAny]
     serializer_class = UserRegSerializer
+
+class ListCreateCommentView(generics.ListCreateAPIView):
+    serializer_class = CommentSerializer
+    permission_classes = [permissions.DjangoModelPermissions]
+
+    def get_queryset(self):
+        return Comment.objects.all()
 
 
 class ListCreatePlantsView(generics.ListCreateAPIView):

@@ -7,6 +7,7 @@ urlpatterns = [
     path('register', views.RegisterView.as_view()),
     path('login', views.CustomAuthToken.as_view()),
     path('plant', views.ListCreatePlantsView.as_view()),
+    path('comment', views.ListCreateCommentView.as_view()),
     path('plant/<pk>', views.UpdatePlantView.as_view()),
 ]
 
