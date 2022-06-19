@@ -3,14 +3,43 @@ from django.contrib.auth.models import Group
 from rest_framework.validators import UniqueValidator
 from rest_framework import serializers
 from django.contrib.auth.password_validation import validate_password
-from .models import Plant, Comment
+from .models import Plant, Comment, PlantImage, Family
+
+
+class PlantImageSerializer(serializers.ModelSerializer):
+    photo_url = serializers.ReadOnlyField()
+    photo = serializers.ImageField()
+
+    class Meta:
+        model = PlantImage
+        fields = '__all__'
+
+
+class FamilySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Family
+        fields = '__all__'
 
 
 class PlantSerializer(serializers.ModelSerializer):
-    photo_url = serializers.SerializerMethodField()
+    photo_url = serializers.StringRelatedField()
+    add_photos = serializers.StringRelatedField(many=True)
+    family = serializers.StringRelatedField()
 
-    def get_photo_url(self, obj):
-        return obj.photo.url
+    # def get_photo_url(self, obj):
+    #     return obj.photo.url
+
+    class Meta:
+        model = Plant
+        fields = '__all__'
+
+
+class PlantCreateSerializer(serializers.ModelSerializer):
+    id = serializers.ReadOnlyField()
+    photo = serializers.PrimaryKeyRelatedField(queryset=PlantImage.objects.all())
+    add_photos = serializers.PrimaryKeyRelatedField(many=True, queryset=PlantImage.objects.all())
+    family = serializers.PrimaryKeyRelatedField(queryset=Family.objects.all())
 
     class Meta:
         model = Plant
