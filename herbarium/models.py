@@ -67,6 +67,5 @@ class Plant(models.Model):
     date = models.DateField()
     collector = models.CharField(max_length=150)
     determinate = models.CharField(max_length=150)
-    photo = models.ForeignKey(PlantImage, related_name="profile_plant", on_delete=models.RESTRICT, blank=True,
-                              null=True)
+    # photo = models.ForeignKey(PlantImage, related_name="photo_plant", on_delete=models.RESTRICT, blank=True)
     add_photos = models.ManyToManyField(PlantImage, related_name="related_plant")

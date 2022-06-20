@@ -23,7 +23,7 @@ class FamilySerializer(serializers.ModelSerializer):
 
 
 class PlantSerializer(serializers.ModelSerializer):
-    photo_url = serializers.StringRelatedField()
+    # photo_url = serializers.StringRelatedField()
     add_photos = serializers.StringRelatedField(many=True)
     family = serializers.StringRelatedField()
 
@@ -37,7 +37,7 @@ class PlantSerializer(serializers.ModelSerializer):
 
 class PlantCreateSerializer(serializers.ModelSerializer):
     id = serializers.ReadOnlyField()
-    photo = serializers.PrimaryKeyRelatedField(queryset=PlantImage.objects.all())
+    # photo = serializers.PrimaryKeyRelatedField(queryset=PlantImage.objects.all())
     add_photos = serializers.PrimaryKeyRelatedField(many=True, queryset=PlantImage.objects.all())
     family = serializers.PrimaryKeyRelatedField(queryset=Family.objects.all())
 
