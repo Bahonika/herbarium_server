@@ -56,13 +56,6 @@ class FamilyList(generics.ListCreateAPIView):
     serializer_class = FamilySerializer
     queryset = Family.objects.all()
 
-    # def get_queryset(self):
-    #     queryset = Family.objects.all()
-    #     family_p = self.request.query_params.get('family_name')
-    #     if family_p is not None:
-    #         queryset = queryset.filter(family__istartswith=family_p)
-    #     return queryset
-
 
 class FamilyDetail(generics.RetrieveAPIView):
     serializer_class = FamilySerializer
@@ -73,6 +66,10 @@ class PlantList(generics.ListCreateAPIView):
     serializer_class = PlantSerializer
     permission_classes = [permissions.DjangoModelPermissions]
 
+    # filter_backends = [DjangoFilterBackend]
+    # filter_fields = ["family"]
+    # renderer_classes = [JSONRenderer]
+
     def get_serializer_class(self):
         if self.request.method == 'GET':
             return PlantSerializer
@@ -80,7 +77,13 @@ class PlantList(generics.ListCreateAPIView):
             return PlantCreateSerializer
 
     def get_queryset(self):
-        return Plant.objects.all()
+
+        queryset = Plant.objects.all()
+
+        family_f = self.request.query_params.get('family')
+        if family_f is not None:
+            queryset = queryset.filter(family=family_f)
+        return queryset
 
 
 class PlantImageCreate(generics.CreateAPIView):
