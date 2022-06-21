@@ -49,7 +49,6 @@ class Family(models.Model):
         return self.family_name
 
 
-
 PLACE_CHOICES = (
     ('Районе первый', 'Первый'),
     ('Районе второй', 'Второй'),
@@ -63,9 +62,8 @@ class Plant(models.Model):
     latin = models.CharField(max_length=150)
     family = models.ForeignKey(Family, related_name="family_plant", on_delete=models.RESTRICT)
     place = models.CharField(max_length=40, choices=PLACE_CHOICES)
-    habitat = models.CharField(max_length=150)
+    habitat = models.CharField(max_length=150, null=True, blank=True, default=None)
     date = models.DateField()
-    collector = models.CharField(max_length=150)
-    determinate = models.CharField(max_length=150)
-    # photo = models.ForeignKey(PlantImage, related_name="photo_plant", on_delete=models.RESTRICT, blank=True)
+    collector = models.CharField(max_length=150, null=True, blank=True, default=None)
+    determinate = models.CharField(max_length=150, null=True, blank=True, default=None)
     add_photos = models.ManyToManyField(PlantImage, related_name="related_plant")
